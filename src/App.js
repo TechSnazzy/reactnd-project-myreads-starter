@@ -10,11 +10,6 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
-        {this.state.showSearchPage ? (
-
-        ) : (
-
-        )}
       </div>
     )
   }
