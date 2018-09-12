@@ -34,7 +34,7 @@ class MainPage extends Component {
                     this.props.books
                       .filter(book => book.shelf === 'wantToRead')
                       .map(book => (
-                        <li>
+                        <li key={book.id}>
                           <Book />
                         </li>
                       ))

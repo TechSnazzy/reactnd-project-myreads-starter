@@ -24,6 +24,9 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div className="app">
+        {/*
+          1. Give the contents of MainPage to the state.
+          */}
         <MainPage books={this.state.books} />
       </div>
     )
