@@ -9,6 +9,12 @@ class BooksApp extends React.Component {
     books: []
   }
 
+  /*
+  1. Call the BooksAPI into the file.
+  2. Then call the getAll() method and use then to fetch all the books.
+  3. Which then puts them into the books array.
+  4. And finally update the state.
+  */
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books: books })
