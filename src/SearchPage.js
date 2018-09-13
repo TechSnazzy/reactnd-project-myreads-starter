@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Book from './Book';
+
+import * as BooksAPI from './BooksAPI';
 
 class SearchPage extends Component {
   state = {
@@ -41,7 +44,15 @@ class SearchPage extends Component {
         <div className="search-books-results">
 
           <ol className="books-grid">
-
+            {
+              this.state.searchedBooks.map(searchedBook => (
+                <li key={searchedBook.id}>
+                  <Book
+                    book={searchedBook}
+                  />
+                </li>
+              ))
+            }
           </ol>
 
         </div>
