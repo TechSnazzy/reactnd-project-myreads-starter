@@ -12,6 +12,12 @@ class SearchPage extends Component {
     })
   }
 
+  getSearchedBooks = (query) => {
+    BooksAPI.search(query).then((searchedBooks) => {
+      this.setState({ searchedBooks: searchedBooks })
+    })
+  }
+
   render() {
     return (
       <div className="search-books">
