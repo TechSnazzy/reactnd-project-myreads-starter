@@ -45,10 +45,11 @@ class BooksApp extends React.Component {
           1. Give the contents of MainPage to the state.
           2. Pass moveShelf into MainPage.
           */}
-        <MainPage
+        {/*<MainPage
           books={this.state.books}
           moveShelf={this.moveShelf}
-        />
+        />*/}
+        <SearchPage />
       </div>
     )
   }
