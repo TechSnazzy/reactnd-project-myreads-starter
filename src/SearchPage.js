@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 
 class SearchPage extends Component {
+  state = {
+    query: ''
+  }
+
+  updateQuery = (query) => {
+    this.setState({
+      query: query
+    })
+  }
+
   render() {
     return (
       <div className="search-books">
@@ -17,7 +27,7 @@ class SearchPage extends Component {
         <div className="search-books-results">
 
           <ol className="books-grid"></ol>
-          
+
         </div>
       </div>
     );
