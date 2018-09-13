@@ -22,16 +22,26 @@ class BooksApp extends React.Component {
   }
 
   /*
-  1. Create this method to update the state.
+  Step 1
+  1. To update, we use the .update() method on BooksAPI.
+  2. It needs a book and a shelf.
+  3. It is in App.js because that's where the state lives.
+  4. Use this in the Book component (Book.js).
   */
   moveShelf = (book, shelf) => {
-    update(book, shelf)
+    BooksAPI.update(book, shelf)
+
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books: books })
+    })
   }
 
   render() {
     return (
       <div className="app">
         {/*
+          Step 3
+          0. ...From <select> in Book.js.
           1. Give the contents of MainPage to the state.
           2. Pass moveShelf into MainPage.
           */}

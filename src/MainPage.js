@@ -20,6 +20,11 @@ class MainPage extends Component {
                       .filter(book => book.shelf === 'currentlyReading')
                       .map(book => (
                         <li key={book.id}>
+                          {/*
+                            Step 4
+                            0. ... from App.js.
+                            1. Use this.props to pass it to moveShelf.
+                            */}
                           <Book
                             book={book}
                             moveShelf={this.props.moveShelf}

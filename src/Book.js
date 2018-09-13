@@ -8,11 +8,20 @@ class Book extends Component {
           <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks.thumbnail}")` }}></div>
           <div className="book-shelf-changer">
             {/*
+              Step 2
+              0. ...From moveShelf from App.js.
               1. select will need the onChange() method.
               2. onChange() will be used to update the shelf.
+              3. Refer to "OnChange event using React JS for drop down" from StackOverflow.
               */}
             <select
-
+            /*
+              Step 5
+              0. Call the onChange() method when the selection changes.
+              */
+              onChange={(event) => this.props.moveShelf(
+                this.props.book, event.target.value
+              )}
               >
               <option value="move" disabled>Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
