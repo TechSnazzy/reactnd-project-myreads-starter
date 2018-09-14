@@ -13,12 +13,22 @@ class SearchPage extends Component {
     this.setState({
       query: query
     })
+    this.updateSearchedBooks(query);
   }
 
-  getSearchedBooks = (query) => {
-    BooksAPI.search(query).then((searchedBooks) => {
-      this.setState({ searchedBooks: searchedBooks })
-    })
+  /*
+  1. Run this method when we update the query above.
+  2. If we have a query, we will fetch the books.
+  3. And if we don't have a query, then the searchedBooks state will be an empty array.
+  */
+  updateSearchedBooks = (query) => {
+    if (query) {
+      BooksAPI.search(query).then((searchedBooks) => {
+        this.setState({ searchedBooks: searchedBooks })
+      })
+    } else {
+      this.setState({ searchedBooks: [] });
+    }
   }
 
   render() {
