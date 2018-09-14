@@ -24,7 +24,14 @@ class SearchPage extends Component {
   updateSearchedBooks = (query) => {
     if (query) {
       BooksAPI.search(query).then((searchedBooks) => {
-        this.setState({ searchedBooks: searchedBooks })
+        {/*
+          This is error handling if the searchedBoooks aren't found.
+          */}
+        if (searchedBooks.error) {
+          this.setState({ searchedBooks: [] });
+        } else {
+          this.setState({ searchedBooks: searchedBooks })
+        }
       })
     } else {
       this.setState({ searchedBooks: [] });
