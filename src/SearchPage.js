@@ -20,13 +20,12 @@ class SearchPage extends Component {
   1. Run this method when we update the query above.
   2. If we have a query, we will fetch the books.
   3. And if we don't have a query, then the searchedBooks state will be an empty array.
+  4. And the nested if handles the error using the error property if text input results in undefined.
+  5. And when it matches, it will use the .map() in the ordered list below.
   */
   updateSearchedBooks = (query) => {
     if (query) {
       BooksAPI.search(query).then((searchedBooks) => {
-        {/*
-          This is error handling if the searchedBoooks aren't found.
-          */}
         if (searchedBooks.error) {
           this.setState({ searchedBooks: [] });
         } else {
