@@ -36,20 +36,22 @@ class BooksApp extends React.Component {
     })
   }
 
+  /*
+  Step 3
+  0. ...From <select> in Book.js.
+  1. Give the contents of MainPage to the state.
+  2. Pass moveShelf into MainPage.
+  */
   render() {
     return (
       <div className="app">
-        {/*
-          Step 3
-          0. ...From <select> in Book.js.
-          1. Give the contents of MainPage to the state.
-          2. Pass moveShelf into MainPage.
-          */}
-        {/*<MainPage
+        <MainPage
           books={this.state.books}
           moveShelf={this.moveShelf}
-        />*/}
-        <SearchPage />
+        />
+        {/* <SearchPage
+          moveShelf={this.moveShelf}
+        /> */}
       </div>
     )
   }
