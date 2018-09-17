@@ -90,3 +90,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Resources
+I followed this walkthrough to complete most of this project.
+* [Study Jam 21/07 - FEND P7 - My Reads](https://www.youtube.com/watch?v=i6L2jLHV9j8)
