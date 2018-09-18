@@ -35,41 +35,50 @@ The backend API uses a fixed set of cached search results and is limited to a pa
 
 ## Backend Server
 
-The provided file `BooksAPI.js` contains the following methods that are needed to perform necessary operations on the backend:
+To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
 
-### Method: [getAll()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/commands/getAll)
+* [`getAll`](#getall)
+* [`update`](#update)
+* [`search`](#search)
 
-  ```
-  getAll()
-  ```
+### `getAll`
 
-  * Returns a Promise which resolves to a JSON object containing a collection of book objects.
-  * This collection represents the books currently in the bookshelves in your app.
+Method Signature:
 
-### Method: [update()](https://developer.mozilla.org/en-US/docs/Web/API/MediaKeySession/update)
+```js
+getAll()
+```
 
-  ```
-  update(book, shelf)
-  ```
+* Returns a Promise which resolves to a JSON object containing a collection of book objects.
+* This collection represents the books currently in the bookshelves in your app.
 
-  * book: <Object> containing at minimum an id attribute
-  * shelf: <String> contains one of ["wantToRead", "currentlyReading", "read"]
-  * Returns a Promise which resolves to a JSON object containing the response data of the POST request
+### `update`
 
-### Method: [search()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/search)
+Method Signature:
 
-  ```
-  search(query)
-  ```
+```js
+update(book, shelf)
+```
 
-  * query: <String>
-  * Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-  * These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+* book: `<Object>` containing at minimum an `id` attribute
+* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]
+* Returns a Promise which resolves to a JSON object containing the response data of the POST request
+
+### `search`
+
+Method Signature:
+
+```js
+search(query)
+```
+
+* query: `<String>`
+* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
+* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
 
 ## Contributing
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
-
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Resources
